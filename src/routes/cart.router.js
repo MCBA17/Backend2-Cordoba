@@ -4,7 +4,7 @@ import { CartManager } from "../cartManager.js";
 const CartRouter = Router();
 const cartManager = new CartManager();
 
-// Obtener todos los carritos
+// Obtener todos los carritos (http://localhost:8080/cart)
 CartRouter.get("/", async (req, res) => {
     try {
         const carts = await cartManager.getCarts();
@@ -15,7 +15,7 @@ CartRouter.get("/", async (req, res) => {
     }
 });
 
-// Obtener productos de un carrito por ID
+// Obtener productos de un carrito por ID (http://localhost:8080/cart/:cid/products)
 CartRouter.get("/:cid/products", async (req, res) => {
     const { cid } = req.params;
     try {
@@ -31,7 +31,7 @@ CartRouter.get("/:cid/products", async (req, res) => {
     }
 });
 
-// Crear un nuevo carrito
+// Crear un nuevo carrito (http://localhost:8080/cart)
 CartRouter.post("/", async (req, res) => {
     try {
         const newCart = await cartManager.newCart();
@@ -42,7 +42,7 @@ CartRouter.post("/", async (req, res) => {
     }
 });
 
-// Agregar un producto al carrito
+// Agregar un producto al carrito (http://localhost:8080/cart/:cid/products/:pid)
 CartRouter.post("/:cid/products/:pid", async (req, res) => {
     const { cid, pid } = req.params;
     try {
