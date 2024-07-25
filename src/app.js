@@ -1,6 +1,6 @@
 import express from "express";
-import { ProductManager } from "./productManager.js";
 import { ProductsRouter } from "./routes/products.router.js";
+import { CartRouter } from "./routes/cart.router.js";
 
 // App
 const app = express();
@@ -23,3 +23,4 @@ app.listen(PORT, () => {
 
 // Rutas
 app.use("/products", ProductsRouter)
+app.use("/cart", CartRouter)
