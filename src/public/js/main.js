@@ -1,6 +1,6 @@
 const socket = io();
 
-socket.emit('message', "Comunicandome desde webSocket Main");
+socket.emit('message', "mensaje desde main");
 
 socket.on("products", (data) => {
 
@@ -27,7 +27,7 @@ socket.on("products", (data) => {
         button.addEventListener("click", () => {
             const productId = button.getAttribute("data-id");
             socket.emit("deleteProduct", productId);
-            
+
             });
         });
 });

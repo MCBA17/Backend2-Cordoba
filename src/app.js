@@ -17,20 +17,21 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static("./src/public"))
 
 // Ruta para renderizar el archivo HTML
-app.get("/", (req, res) => {
+app.get("/", (res) => {
     res.sendFile('index.html', { root: 'src/public' });
 });
 
+// Servidor
 const Servidor = app.listen(PORT, () => {
     console.log("Escuchando en el puerto " + PORT);
 });
 
 // Rutas
-app.use("/products", ProductsRouter)
-app.use("/cart", CartRouter)
+app.use("/api/products", ProductsRouter)
+app.use("/api/cart", CartRouter)
 app.use("/", ViewsRouter);
 
-//Express Handlebars
+// Express Handlebars
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./src/views")

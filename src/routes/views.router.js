@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { ProductManager } from "../productManager.js";
+import { productManager } from "./products.router.js";
 
 const ViewsRouter = Router();
 
 //Lista de todos los productos en la ruta /products
 ViewsRouter.get("/products", async (req, res) => {
-        const productos = await ProductManager.getProducts();
+        const productos = await productManager.getProducts();
         res.render("home", {productos});
     }
 )
