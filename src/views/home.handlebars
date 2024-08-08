@@ -1,0 +1,12 @@
+<h1>Catalogo</h1>
+
+<div>
+    {{#each productos}}
+        <div>
+            <p>Nombre: {{this.title}}</p>
+            <p>Descripción: {{this.description}}</p>
+            <p>Precio:$ {{this.price}}</p>
+            <button> Comprar </button>
+        </div>
+    {{/each}}
+</div>

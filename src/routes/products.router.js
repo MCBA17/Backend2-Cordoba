@@ -82,4 +82,4 @@ ProductsRouter.delete("/:pid", async (req, res) => {
     }
 });
 
-export { ProductsRouter };
+export { ProductsRouter, productManager };
