@@ -7,7 +7,7 @@ const viewsRouter = Router();
 viewsRouter.get("/products", async (req, res) => {
         
         let page = req.query.page || 1;
-        let limit = 3;
+        let limit = 10;
         
         const productosLista = await ProductModel.paginate({}, {limit, page});
         const productosListaFinal = productosLista.docs.map(elemento =>{

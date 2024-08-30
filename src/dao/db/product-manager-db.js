@@ -18,8 +18,8 @@ class ProductManager {
     getProducts = async (queryParams) => {
         let query = {};
         let sort = {};
-        let page = parseInt(queryParams.page) || 1;
-        let limit = parseInt(queryParams.limit) || 10;
+        let page = parseInt(queryParams?.page) || 1;
+        let limit = parseInt(queryParams?.limit) || 10;
         const { category, sort: sortOrder, title } = queryParams;
     
         if (category) {
