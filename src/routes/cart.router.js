@@ -30,7 +30,7 @@ cartRouter.get("/:cid", async (req, res) => {
 });
 
 // Agregar productos al carrito
-cartRouter.post("/:cid/product/:pid", async (req, res) => {
+cartRouter.post("/:cid/products/:pid", async (req, res) => {
     let cid = req.params.cid;
     let pid = req.params.pid;
     let quantity = req.body.quantity || 1;
@@ -67,7 +67,7 @@ cartRouter.put("/:cid", async (req, res) => {
 });
 
 // Actualizar cantidad de producto en carrito
-cartRouter.put("/:cid/product/:pid", async (req, res) => {
+cartRouter.put("/:cid/products/:pid", async (req, res) => {
     let cid = req.params.cid;
     let pid = req.params.pid;
     let quantity = req.body.quantity;
@@ -89,7 +89,7 @@ cartRouter.put("/:cid/product/:pid", async (req, res) => {
 });
 
 // Eliminar producto del carrito
-cartRouter.delete("/:cid/product/:pid", async (req, res) => {
+cartRouter.delete("/:cid/products/:pid", async (req, res) => {
     let cid = req.params.cid;
     let pid = req.params.pid;
 
@@ -98,6 +98,22 @@ cartRouter.delete("/:cid/product/:pid", async (req, res) => {
         res.json(actualizado.products);
     } catch (error) {
         res.status(500).send("Error al eliminar producto del carrito");
+        console.log(error);
+    }
+});
+
+// Eliminar Carrito
+cartRouter.delete("/:cid", async (req, res) => {
+    let cid = req.params.cid;
+
+    try {
+        const eliminado = await cartManager.deleteCart(cid);
+        if (!eliminado) {
+            return res.status(404).send('Carrito no encontrado');
+        }
+        res.send('Carrito eliminado con éxito');
+    } catch (error) {
+        res.status(500).send("Error al eliminar el carrito");
         console.log(error);
     }
 });

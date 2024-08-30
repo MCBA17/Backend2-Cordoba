@@ -78,6 +78,21 @@ class CartManager {
         }
     };
 
+    // Eliminar Carrito
+    deleteCart = async (cid) => {
+        try {
+          const cart = await CartModel.findByIdAndDelete(cid);
+          if (!cart) {
+              console.log("Carrito no encontrado");
+              return null;
+           }
+          return cart;
+     } catch (error) {
+         console.log("Error al eliminar el carrito", error);
+         throw error;
+     }
+    };
+
     // Actualizar carrito
     updateCartProducts = async (cartId, products) => {
         try {
