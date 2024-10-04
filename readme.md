@@ -1,4 +1,4 @@
-# Proyecto Final Backend 1
+# Preentrega de Backend 2
 
 ##### `Dev - Matías Córdoba`
 Mtsaia:coder
@@ -13,27 +13,34 @@ Mtsaia:coder
 
 ## Rutas
 - <h4 style="color: green">GET<h4>
- - /carts <span style="color: green;">Ver lista de carritos</span>
+ - /carts <span style="color: green;">(Ver lista de carritos)</span>
  - /carts/:cid <span style="color: green;">(Ver un carrito en especifico por su Id)<span>
  - /products <span style="color: green;">(Ver lista de productos con paginación)<span>
  - /api/products/ <span style="color: green;">(Ver lista de productos desde la api)<span>
- - /api/products/query(category=<"category">, sortOrder=asc, page) <span style="color: green;">(Ver lista de productos con query)<span>
+ - /api/products/query(category=<"category">, sortOrder=asc, page) 
+ <span style="color: green;">(Ver lista de productos con query)<span>
 - /api/products/:pid <span style="color: green;">(Ver un producto especifico)<span>
+
 - <h4 style="color: yellow">POST<h4>
 - /api/products/ <span style="color: yellow;">(Crear un producto)
 - /api/carts/ <span style="color: yellow;">(Crear un carrito)
 - /api/carts/:cid/products/:pid <span style="color: yellow;">(Agregar un producto a un carrito)
+- /register <span style="color: yellow;">(Registrar un user)
+- /login <span style="color: yellow;">(Iniciar sesión con un user)
+- /logout <span style="color: yellow;">(Cerrar la sesión de un user)
+
 - <h4 style="color: blue">PUT<h4>
 - /api/products/:pid <span style="color: blue;">(Modificar un producto)
 - /api/carts/:cid <span style="color: blue;">(Modificar los productos de un carrito)
 - /api/carts/:cid/products/:pid <span style="color: blue;">(Modificar la cantidad de un producto en un carrito)
+
 - <h4 style="color: red">DELETE<h4>
 - /api/products/:pid <span style="color: red;">(Eliminar un producto)
 - /api/carts/:cid <span style="color: red;">(Eliminar un carrito)
 - /api/carts/:cid/products/:pid <span style="color: red;">(Eliminar un producto de un carrito)
 
 ## Dependencias
-`express` `express-handlebars` `nodemon` `socket.io` `mongodb` `mongoose-paginate-v2` 
+`express` `express-handlebars` `nodemon` `socket.io` `mongodb` `mongoose-paginate-v2` `passport` `passport-jwt` `bcrypt` `cookie-parser` `jsonwebtoken` 
 
 ## Contacto
 <div style="display:flex;">
