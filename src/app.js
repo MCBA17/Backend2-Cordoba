@@ -10,7 +10,7 @@ import {Server} from "socket.io"
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
-import { viewUserRouter } from "./routes/views.users.js";
+import { viewUserRouter } from "./routes/views.user.js";
 import { userRouter} from "./routes/user.router.js";
 
 const app = express();

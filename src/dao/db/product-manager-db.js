@@ -27,7 +27,7 @@ class ProductManager {
         }
     
         if (title) {
-            query.title = new RegExp(title, 'i'); // 'i' para que sea case-insensitive
+            query.title = new RegExp(title, 'i');
         }
     
         if (sortOrder) {
